@@ -11,7 +11,7 @@ from urllib.request import urlopen
 from dash import dcc, html, Input, Output, dash_table
 
 merged_data = pd.read_csv('Prism_dataframe.csv')
-
+## added comments
 
 with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
     json_counties = json.load(response)
