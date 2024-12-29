@@ -7,12 +7,14 @@ import plotly.express as px
 import pandas as pd
 import json
 import dash
+from urllib.request import urlopen
 from dash import dcc, html, Input, Output, dash_table
 
 merged_data = pd.read_csv('Prism_dataframe.csv')
 
 
-
+with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
+    json_counties = json.load(response)
 ## Creating the dash app
 app = dash.Dash(__name__)
 server = app.server
